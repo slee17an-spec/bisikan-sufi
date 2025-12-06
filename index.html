@@ -3,209 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bisikan Sufi – GODFORGE Eternal Edition</title>
-
+<title>ABSOLUTE SUPREMACY</title>
 <style>
     body {
         margin: 0;
         padding: 0;
-        background: #000;
+        background: linear-gradient(160deg, #000000, #0e0e17, #000000);
+        color: #ffffff;
+        font-family: "Cinzel", serif;
+        height: 100vh;
         overflow: hidden;
         text-align: center;
-        color: #ffeaa0;
-        font-family: Arial, sans-serif;
     }
 
-    h2, p {
-        margin-top: 35px;
-        font-size: 24px;
-        text-shadow: 0 0 25px rgba(255,240,180,1);
-        position: relative;
-        z-index: 20;
-    }
-
-    /* BACKGROUND LIGHTNING */
-    .lightning {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100vw; height: 100vh;
-        background: url('https://i.imgur.com/7F2q81z.png');
-        background-size: cover;
-        opacity: 0.12;
-        animation: flash 4s infinite;
-        z-index: 1;
-        pointer-events: none;
-    }
-
-    @keyframes flash {
-        0% { opacity: 0.1; }
-        40% { opacity: 0.2; }
-        70% { opacity: 0.05; }
-        100% { opacity: 0.12; }
-    }
-
-    /* LINGKARAN SIHIR 3 LAPIS */
-    .circle1, .circle2, .circle3 {
-        position: fixed;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        border: 3px solid rgba(255,215,0,0.55);
-        animation: spin1 14s linear infinite;
-        z-index: 5;
-        filter: blur(1.5px);
-    }
-    .circle1 { width: 650px; height: 650px; animation-duration: 14s; }
-    .circle2 { width: 520px; height: 520px; animation-duration: 10s; border-color: rgba(255,215,0,0.35); }
-    .circle3 { width: 380px; height: 380px; animation-duration: 7s; border-color: rgba(255,215,0,0.25); }
-
-    @keyframes spin1 {
-        to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    /* GLYPH RUNIC */
-    .glyph {
-        position: fixed;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%) scale(1.4);
-        width: 600px;
-        opacity: 0.22;
-        animation: glyphPulse 5s ease-in-out infinite;
-        z-index: 6;
-        pointer-events: none;
-    }
-
-    @keyframes glyphPulse {
-        0% { opacity: 0.17; }
-        50% { opacity: 0.32; }
-        100% { opacity: 0.17; }
-    }
-
-    /* PORTAL 4D */
-    .portal {
-        position: fixed;
-        top: 50%; left: 50%;
-        width: 500px; height: 500px;
-        border-radius: 50%;
-        background: conic-gradient(
-            from 0deg,
-            rgba(255,215,0,0.05),
-            rgba(255,255,255,0.7),
-            rgba(255,215,0,0.05)
-        );
-        transform: translate(-50%, -50%);
-        filter: blur(50px);
-        opacity: 0.45;
-        animation: portalSpin 3s linear infinite;
-        z-index: 4;
-    }
-
-    @keyframes portalSpin {
-        to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    /* THUMBNAIL GODFORGE */
-    .thumbnail {
-        width: 92%;
-        max-width: 480px;
-        margin-top: 80px;
-        border-radius: 20px;
-        opacity: 0;
-        transform: scale(0.6);
-        animation: summon 2.5s ease forwards;
-        box-shadow: 0 0 45px rgba(255,240,150,0.9);
-        position: relative;
-        z-index: 20;
-    }
-
-    @keyframes summon {
-        0% { opacity: 0; transform: scale(0.4) rotate(-12deg); filter: blur(12px); }
-        100% { opacity: 1; transform: scale(1) rotate(0deg); filter: blur(0); }
-    }
-
-    .thumbnail::after {
-        content: "";
-        position: absolute;
-        top: 0; left: -130%;
-        width: 60%; height: 100%;
-        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
-        animation: shineThumb 4.2s infinite;
-    }
-
-    @keyframes shineThumb {
-        0% { left: -130%; }
-        100% { left: 150%; }
-    }
-
-    /* BUTTON ENERGY FORGING */
-    .button {
-        display: inline-block;
-        margin-top: 40px;
-        padding: 22px 50px;
-        font-size: 26px;
+    .title {
+        margin-top: 120px;
+        font-size: 70px;
         font-weight: bold;
-        color: #000;
-        background: radial-gradient(circle, #ffe785, #c7a200);
-        border-radius: 16px;
-        text-decoration: none;
-        opacity: 0;
-        transform: scale(0.8);
-        animation: btnIn 3s ease forwards 1.4s;
-        position: relative;
-        z-index: 20;
-        box-shadow:
-            0 0 30px rgba(255,235,150,1),
-            inset 0 0 15px rgba(255,255,255,0.7);
+        background: linear-gradient(90deg, #ff3b3b, #ffffff, #ff3b3b);
+        -webkit-background-clip: text;
+        color: transparent;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        animation: pulse 3s infinite linear;
     }
 
-    @keyframes btnIn {
-        to { opacity: 1; transform: scale(1); }
+    @keyframes pulse {
+        0% { filter: drop-shadow(0 0 10px #ff4444); }
+        50% { filter: drop-shadow(0 0 35px #ff9999); }
+        100% { filter: drop-shadow(0 0 10px #ff4444); }
     }
 
-    .button::after {
-        content: "";
+    .tagline {
+        font-size: 22px;
+        margin-top: 20px;
+        opacity: 0.8;
+        letter-spacing: 4px;
+        animation: fade 4s ease-in-out;
+    }
+
+    @keyframes fade {
+        0% { opacity: 0; }
+        100% { opacity: 0.8; }
+    }
+
+    .energy {
         position: absolute;
-        top: 0; left: -150%;
-        width: 70%; height: 100%;
-        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.9), transparent);
-        animation: forge 4.5s infinite;
+        width: 900px;
+        height: 900px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255,50,50,0.15), transparent);
+        animation: expand 6s infinite ease-in-out;
     }
 
-    @keyframes forge {
-        0% { left: -150%; }
-        100% { left: 170%; }
+    @keyframes expand {
+        0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+        50% { transform: translate(-50%, -50%) scale(1.25); opacity: 0.7; }
+        100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
     }
 </style>
-
-<script>
-    const videoId = "BqvsdnBKv7g";
-    const ytLink = "https://youtube.com/shorts/" + videoId;
-
-    // Redirect setelah cinematic selesai
-    setTimeout(() => {
-        window.location.href = ytLink;
-    }, 4600);
-</script>
-
 </head>
 <body>
-
-<div class="lightning"></div>
-
-<div class="circle1"></div>
-<div class="circle2"></div>
-<div .circle3></div>
-
-<img class="glyph" src="https://i.imgur.com/xvOHx1x.png">
-
-<div class="portal"></div>
-
-<h2>Forging Divine Path...</h2>
-<p>Energi Cahaya Sedang Ditempa</p>
-
-<img class="thumbnail" src="https://img.youtube.com/vi/BqvsdnBKv7g/maxresdefault.jpg">
-
-<a class="button" href="https://youtube.com/shorts/BqvsdnBKv7g">Masuk Portal</a>
-
+    <div class="energy"></div>
+    <h1 class="title">ABSOLUTE SUPREMACY</h1>
+    <div class="tagline">Di Atas Segala Kekuasaan — Tanpa Lawan. Tanpa Akhir.</div>
 </body>
 </html>
