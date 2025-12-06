@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Redirect</title>
+<title>Bisikan Sufi – Smart Redirect Premium</title>
 
 <style>
     body {
@@ -11,24 +11,64 @@
         background: #000;
         color: #fff;
         text-align: center;
-        padding: 40px 20px;
+        padding: 20px;
     }
-    img {
+
+    .thumbnail {
         width: 100%;
         max-width: 450px;
-        border-radius: 12px;
-        box-shadow: 0 0 15px rgba(255,255,255,0.5);
+        border-radius: 15px;
+        opacity: 0;
+        transform: scale(0.9);
+        animation: fadeZoom 1.2s ease forwards;
+        box-shadow: 0 0 18px rgba(255,255,255,0.4);
     }
+
+    @keyframes fadeZoom {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .loading-bar {
+        width: 90%;
+        max-width: 450px;
+        height: 10px;
+        background: #333;
+        border-radius: 20px;
+        margin: 25px auto;
+        overflow: hidden;
+    }
+
+    .loading-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #ff0000, #ff8800);
+        border-radius: 20px;
+        animation: loading 2.8s linear forwards;
+    }
+
+    @keyframes loading {
+        from { width: 0%; }
+        to { width: 100%; }
+    }
+
     .button {
         margin-top: 20px;
         display: inline-block;
-        background: #ff0000;
-        padding: 14px 26px;
-        border-radius: 8px;
+        background: linear-gradient(90deg, #ff0000, #cc0000);
+        padding: 16px 30px;
+        border-radius: 10px;
         color: #fff;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: bold;
+        box-shadow: 0 0 12px rgba(255,0,0,0.7);
+        animation: fadeButton 1.8s ease forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeButton {
+        to { opacity: 1; }
     }
 </style>
 
@@ -36,20 +76,25 @@
     const videoId = "BqvsdnBKv7g"; 
     const ytLink = "https://youtube.com/shorts/" + videoId;
 
+    // Auto redirect ketika loading bar selesai (3 detik)
     setTimeout(() => {
         window.location.href = ytLink;
-    }, 2000);
+    }, 3000);
 </script>
+
 </head>
-
 <body>
-    <h2>Memuat Video...</h2>
-    <p>Anda akan diarahkan ke YouTube</p>
 
-    <img src="https://img.youtube.com/vi/BqvsdnBKv7g/maxresdefault.jpg" alt="thumbnail">
+    <h2 style="margin-bottom:5px;">Memuat Video Premium...</h2>
+    <p>Anda akan diarahkan sebentar lagi</p>
 
-    <br>
+    <img class="thumbnail" src="https://img.youtube.com/vi/BqvsdnBKv7g/maxresdefault.jpg" alt="thumbnail">
+
+    <div class="loading-bar">
+        <div class="loading-fill"></div>
+    </div>
+
     <a class="button" href="https://youtube.com/shorts/BqvsdnBKv7g">Tonton Sekarang</a>
+
 </body>
 </html>
-
