@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview Video</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 30px;
+    }
+    img {
+        width: 90%;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    }
+    .btn {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 12px 20px;
+        background: #ff0000;
+        color: white;
+        border-radius: 8px;
+        font-size: 18px;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+<h2 id="title">Memuat...</h2>
+<img id="thumb" src="" alt="Thumbnail">
+<br>
+<a id="watch" class="btn" href="#">Tonton Sekarang</a>
+
+<script>
+    // Ambil ID video dari URL ?v=xxxx
+    const url = new URL(window.location.href);
+    let id = url.searchParams.get("v");
+
+    if (!id) {
+        document.body.innerHTML = "<h3>ID video tidak ditemukan.</h3>";
+    } else {
+        // Thumbnail YouTube
+        document.getElementById("thumb").src =
+            "https://img.youtube.com/vi/" + id + "/hqdefault.jpg";
+
+        // Tombol redirect
+        document.getElementById("watch").href =
+            "https://youtube.com/shorts/" + id;
+
+        // Ambil judul otomatis via no-API (trick)
+        fetch("https://noembed.com/embed?url=https://www.youtube.com/watch?v=" + id)
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById("title").innerText = data.title;
+            });
+    }
+</script>
+
+</body>
+</html>
