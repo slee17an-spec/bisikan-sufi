@@ -3,72 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABSOLUTE SUPREMACY</title>
+<title>Portal Bisikan Sufi</title>
+
 <style>
     body {
         margin: 0;
         padding: 0;
-        background: linear-gradient(160deg, #000000, #0e0e17, #000000);
-        color: #ffffff;
-        font-family: "Cinzel", serif;
-        height: 100vh;
-        overflow: hidden;
+        background: #000;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
         text-align: center;
     }
 
-    .title {
-        margin-top: 120px;
-        font-size: 70px;
-        font-weight: bold;
-        background: linear-gradient(90deg, #ff3b3b, #ffffff, #ff3b3b);
+    h1 {
+        margin-top: 40px;
+        font-size: 36px;
+        background: linear-gradient(90deg, #ffd700, #ffffff, #ffd700);
         -webkit-background-clip: text;
         color: transparent;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        animation: pulse 3s infinite linear;
+        text-shadow: 0 0 15px rgba(255,215,0,0.7);
     }
 
-    @keyframes pulse {
-        0% { filter: drop-shadow(0 0 10px #ff4444); }
-        50% { filter: drop-shadow(0 0 35px #ff9999); }
-        100% { filter: drop-shadow(0 0 10px #ff4444); }
+    .menu-container {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .tagline {
+    .menu-item {
+        padding: 20px;
+        background: #111;
+        border-radius: 12px;
+        border: 2px solid rgba(255,215,0,0.5);
+        text-decoration: none;
+        color: #ffd700;
         font-size: 22px;
-        margin-top: 20px;
-        opacity: 0.8;
-        letter-spacing: 4px;
-        animation: fade 4s ease-in-out;
+        font-weight: bold;
+        box-shadow: 0 0 15px rgba(255,215,0,0.4);
+        transition: 0.3s;
     }
 
-    @keyframes fade {
-        0% { opacity: 0; }
-        100% { opacity: 0.8; }
-    }
-
-    .energy {
-        position: absolute;
-        width: 900px;
-        height: 900px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(255,50,50,0.15), transparent);
-        animation: expand 6s infinite ease-in-out;
-    }
-
-    @keyframes expand {
-        0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
-        50% { transform: translate(-50%, -50%) scale(1.25); opacity: 0.7; }
-        100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+    .menu-item:hover {
+        background: #222;
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(255,215,0,0.8);
     }
 </style>
 </head>
 <body>
-    <div class="energy"></div>
-    <h1 class="title">ABSOLUTE SUPREMACY</h1>
-    <div class="tagline">Di Atas Segala Kekuasaan — Tanpa Lawan. Tanpa Akhir.</div>
+
+<h1>Bisikan Sufi – Portal Video</h1>
+
+<div class="menu-container">
+
+    <a class="menu-item" href="video1.html">✨ Video 1 – Ultra Gold</a>
+    <a class="menu-item" href="video2.html">🌌 Video 2 – Celestial</a>
+    <a class="menu-item" href="video3.html">🔥 Video 3 – Absolute Supremacy</a>
+
+</div>
+
 </body>
 </html>
