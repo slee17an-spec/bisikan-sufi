@@ -3,137 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bisikan Sufi – Celestial Infinity</title>
+<title>Bisikan Sufi – GODFORGE Eternal Edition</title>
 
 <style>
     body {
         margin: 0;
         padding: 0;
-        background: radial-gradient(circle at center, #0a0a0a, #000);
+        background: #000;
         overflow: hidden;
         text-align: center;
-        color: #ffe680;
+        color: #ffeaa0;
         font-family: Arial, sans-serif;
     }
 
     h2, p {
         margin-top: 35px;
-        font-size: 22px;
-        text-shadow: 0 0 20px rgba(255,255,200,0.9);
+        font-size: 24px;
+        text-shadow: 0 0 25px rgba(255,240,180,1);
         position: relative;
-        z-index: 10;
+        z-index: 20;
     }
 
-    /* NEBULA COSMIC SWIRL */
-    .nebula {
+    /* BACKGROUND LIGHTNING */
+    .lightning {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background: url('https://i.imgur.com/7F2q81z.png');
+        background-size: cover;
+        opacity: 0.12;
+        animation: flash 4s infinite;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    @keyframes flash {
+        0% { opacity: 0.1; }
+        40% { opacity: 0.2; }
+        70% { opacity: 0.05; }
+        100% { opacity: 0.12; }
+    }
+
+    /* LINGKARAN SIHIR 3 LAPIS */
+    .circle1, .circle2, .circle3 {
         position: fixed;
         top: 50%; left: 50%;
-        width: 200vw;
-        height: 200vh;
-        background: radial-gradient(circle, rgba(255,215,0,0.3), transparent 70%);
-        filter: blur(70px);
-        transform: translate(-50%, -50%) rotate(0deg);
-        animation: swirl 18s linear infinite;
-        z-index: 1;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 3px solid rgba(255,215,0,0.55);
+        animation: spin1 14s linear infinite;
+        z-index: 5;
+        filter: blur(1.5px);
+    }
+    .circle1 { width: 650px; height: 650px; animation-duration: 14s; }
+    .circle2 { width: 520px; height: 520px; animation-duration: 10s; border-color: rgba(255,215,0,0.35); }
+    .circle3 { width: 380px; height: 380px; animation-duration: 7s; border-color: rgba(255,215,0,0.25); }
+
+    @keyframes spin1 {
+        to { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
-    @keyframes swirl {
-        0% { transform: translate(-50%, -50%) rotate(0deg); }
-        100% { transform: translate(-50%, -50%) rotate(360deg); }
+    /* GLYPH RUNIC */
+    .glyph {
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%) scale(1.4);
+        width: 600px;
+        opacity: 0.22;
+        animation: glyphPulse 5s ease-in-out infinite;
+        z-index: 6;
+        pointer-events: none;
     }
 
-    /* PORTAL EMAS BERPUTAR */
+    @keyframes glyphPulse {
+        0% { opacity: 0.17; }
+        50% { opacity: 0.32; }
+        100% { opacity: 0.17; }
+    }
+
+    /* PORTAL 4D */
     .portal {
         position: fixed;
         top: 50%; left: 50%;
-        width: 580px;
-        height: 580px;
+        width: 500px; height: 500px;
         border-radius: 50%;
         background: conic-gradient(
             from 0deg,
-            rgba(255,215,0,0.15),
-            rgba(255,255,255,0.6),
-            rgba(255,215,0,0.15)
+            rgba(255,215,0,0.05),
+            rgba(255,255,255,0.7),
+            rgba(255,215,0,0.05)
         );
-        filter: blur(35px);
-        animation: portalSpin 4s linear infinite;
         transform: translate(-50%, -50%);
-        z-index: 2;
+        filter: blur(50px);
         opacity: 0.45;
+        animation: portalSpin 3s linear infinite;
+        z-index: 4;
     }
 
     @keyframes portalSpin {
         to { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
-    /* PARTICLE BINTANG */
-    .particle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: #fff8c4;
-        border-radius: 50%;
-        opacity: 0.9;
-        animation: floatUp linear infinite;
-    }
-
-    @keyframes floatUp {
-        from { transform: translateY(100vh) scale(0.4); opacity: 0.5; }
-        to   { transform: translateY(-10vh) scale(1); opacity: 1; }
-    }
-
-    /* THUMBNAIL COSMIC SUMMON */
+    /* THUMBNAIL GODFORGE */
     .thumbnail {
         width: 92%;
         max-width: 480px;
-        border-radius: 18px;
-        position: relative;
-        margin-top: 60px;
+        margin-top: 80px;
+        border-radius: 20px;
         opacity: 0;
-        transform: scale(0.7);
-        animation: summon 2.2s ease forwards;
-        box-shadow: 0 0 40px rgba(255,255,200,0.9);
-        z-index: 10;
+        transform: scale(0.6);
+        animation: summon 2.5s ease forwards;
+        box-shadow: 0 0 45px rgba(255,240,150,0.9);
+        position: relative;
+        z-index: 20;
     }
 
     @keyframes summon {
-        0% { opacity: 0; transform: scale(0.6); filter: blur(10px); }
-        100% { opacity: 1; transform: scale(1); filter: blur(0); }
+        0% { opacity: 0; transform: scale(0.4) rotate(-12deg); filter: blur(12px); }
+        100% { opacity: 1; transform: scale(1) rotate(0deg); filter: blur(0); }
     }
 
     .thumbnail::after {
         content: "";
         position: absolute;
-        top: 0; left: -120%;
+        top: 0; left: -130%;
         width: 60%; height: 100%;
-        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-        animation: shine 4s infinite;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+        animation: shineThumb 4.2s infinite;
     }
 
-    @keyframes shine {
-        0% { left: -120%; }
-        100% { left: 140%; }
+    @keyframes shineThumb {
+        0% { left: -130%; }
+        100% { left: 150%; }
     }
 
-    /* ENERGY WARP BUTTON */
+    /* BUTTON ENERGY FORGING */
     .button {
         display: inline-block;
-        margin-top: 35px;
-        padding: 20px 42px;
-        font-size: 25px;
+        margin-top: 40px;
+        padding: 22px 50px;
+        font-size: 26px;
         font-weight: bold;
         color: #000;
-        background: radial-gradient(circle, #ffe680, #b89500);
+        background: radial-gradient(circle, #ffe785, #c7a200);
         border-radius: 16px;
         text-decoration: none;
-        box-shadow: 
-            0 0 25px rgba(255,245,170,0.9),
-            inset 0 0 15px rgba(255,255,255,0.6);
-        position: relative;
         opacity: 0;
         transform: scale(0.8);
-        animation: btnIn 2.8s ease forwards 1.2s;
-        z-index: 10;
+        animation: btnIn 3s ease forwards 1.4s;
+        position: relative;
+        z-index: 20;
+        box-shadow:
+            0 0 30px rgba(255,235,150,1),
+            inset 0 0 15px rgba(255,255,255,0.7);
     }
 
     @keyframes btnIn {
@@ -143,15 +165,15 @@
     .button::after {
         content: "";
         position: absolute;
-        top: 0; left: -140%;
+        top: 0; left: -150%;
         width: 70%; height: 100%;
-        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
-        animation: warp 4s infinite;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.9), transparent);
+        animation: forge 4.5s infinite;
     }
 
-    @keyframes warp {
-        0% { left: -140%; }
-        100% { left: 160%; }
+    @keyframes forge {
+        0% { left: -150%; }
+        100% { left: 170%; }
     }
 </style>
 
@@ -159,36 +181,31 @@
     const videoId = "BqvsdnBKv7g";
     const ytLink = "https://youtube.com/shorts/" + videoId;
 
-    // Redirect cinematic
+    // Redirect setelah cinematic selesai
     setTimeout(() => {
         window.location.href = ytLink;
-    }, 4200);
+    }, 4600);
 </script>
 
 </head>
 <body>
 
-<div class="nebula"></div>
+<div class="lightning"></div>
+
+<div class="circle1"></div>
+<div class="circle2"></div>
+<div .circle3></div>
+
+<img class="glyph" src="https://i.imgur.com/xvOHx1x.png">
+
 <div class="portal"></div>
 
-<h2>Mengaktifkan Mode Celestial Infinity...</h2>
-<p>Dimensi Cahaya Terbuka</p>
+<h2>Forging Divine Path...</h2>
+<p>Energi Cahaya Sedang Ditempa</p>
 
 <img class="thumbnail" src="https://img.youtube.com/vi/BqvsdnBKv7g/maxresdefault.jpg">
 
-<a class="button" href="https://youtube.com/shorts/BqvsdnBKv7g">Masuk Dimensi</a>
-
-<script>
-    // Particle generator
-    for (let i = 0; i < 60; i++) {
-        const p = document.createElement("div");
-        p.classList.add("particle");
-        p.style.left = Math.random() * 100 + "vw";
-        p.style.animationDuration = 5 + Math.random() * 7 + "s";
-        p.style.animationDelay = Math.random() * 3 + "s";
-        document.body.appendChild(p);
-    }
-</script>
+<a class="button" href="https://youtube.com/shorts/BqvsdnBKv7g">Masuk Portal</a>
 
 </body>
 </html>
