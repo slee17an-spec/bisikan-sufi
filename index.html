@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartLink Redirect</title>
+</head>
+<body>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const videoId = urlParams.get("v");
+
+  if (videoId) {
+    window.location.href = "https://www.youtube.com/shorts/" + videoId;
+  } else {
+    document.body.innerHTML = "<h2>SmartLink aktif. Tambahkan ?v=ID_VIDEO</h2>";
+  }
+</script>
+</body>
+</html>
