@@ -20,6 +20,24 @@
         overflow-x: hidden;
         text-align: center;
     }
+        /* Video Preview Hover */
+.video-card video {
+    width: 100%;
+    border-radius: 12px;
+    display: none; /* sembunyi default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.video-card:hover img.thumb {
+    opacity: 0; /* sembunyikan thumbnail saat hover */
+}
+
+.video-card:hover video {
+    display: block; /* tampilkan video saat hover */
+}
 
     h1 {
         margin-top: 40px;
@@ -180,10 +198,38 @@
     const container = document.getElementById("videoMenu");
 
     videoList.forEach(v => {
-        const id = v[0];
-        const title = v[1];
-        const url = "https://youtube.com/shorts/" + id;
-        const thumb = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+    const id = v[0];
+    const title = v[1];
+    const url = "https://youtube.com/shorts/" + id;
+    const thumb = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+    const preview = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${id}`;
+
+    const card = `
+        <a class="video-card" href="${url}" target="_blank">
+            <img class="thumb" src="${thumb}">
+            <iframe src="${preview}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:none;"></iframe>
+            ${title}
+        </a>
+    `;
+    container.innerHTML += card;
+});
+
+// Tambahkan event hover agar iframe play saat hover
+document.querySelectorAll('.video-card').forEach(card => {
+    const iframe = card.querySelector('iframe');
+    const thumb = card.querySelector('img.thumb');
+
+    card.addEventListener('mouseenter', () => {
+        thumb.style.opacity = '0';
+        iframe.style.display = 'block';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        thumb.style.opacity = '1';
+        iframe.style.display = 'none';
+    });
+});
+
 
         const card = `
             <a class="video-card" href="${url}">
