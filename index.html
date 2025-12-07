@@ -146,6 +146,308 @@ const card = `
 © 2025 Bisikan Sufi Portal. Semua Hak Dilindungi.<br>
 Lisensi: CC BY-NC-ND 4.0
 </footer>
+<!-- VIRAL LOOP ENGINE -->
+<script>
+(function(){
+  var visits = localStorage.getItem("bs_visit") || 0;
+  visits = parseInt(visits) + 1;
+  localStorage.setItem("bs_visit", visits);
+
+  setTimeout(function(){
+    if(visits >= 2 && !sessionStorage.getItem("bs_popup_shown")){
+      var modal = document.getElementById("viralModal");
+      if(modal) { modal.style.display = "flex"; }
+      sessionStorage.setItem("bs_popup_shown","yes");
+    }
+  }, 5000);
+
+  if(document.referrer.indexOf("youtube.com") !== -1){
+    window.scrollTo({top:200, behavior:"smooth"});
+  }
+})();
+</script>
+
+<!-- VIRAL MODAL -->
+<div id="viralModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:99999;justify-content:center;align-items:center;">
+  <div style="background:#0d0d0d;border:2px solid #ffdd55;padding:20px;border-radius:12px;text-align:center;max-width:300px;">
+    <h3 style="color:#ffdd55;">Bagikan Portal Ini</h3>
+    <p style="color:#ccc;font-size:14px;">Bantu orang lain menemukan portal ini.</p>
+
+    <a href="https://wa.me/?text=https://slee17an-spec.github.io/bisikan-sufi/" target="_blank" 
+       style="display:block;margin:10px 0;padding:10px;background:#25D366;color:white;border-radius:30px;text-decoration:none;">
+       Bagikan ke WhatsApp
+    </a>
+
+    <button onclick="document.getElementById('viralModal').style.display='none'"
+      style="margin-top:10px;background:none;border:1px solid #ffdd55;color:#ffdd55;padding:6px 14px;border-radius:20px;">
+      Tutup
+    </button>
+  </div>
+</div>
+<!-- MULTI SHARE VIRAL -->
+<div id="multiShareBox" style="
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  background:#0d0d0d;
+  border:2px solid #ffdd55;
+  padding:12px 14px;
+  border-radius:16px;
+  box-shadow:0 0 20px rgba(255,215,0,0.5);
+  z-index:9999;
+  display:none;
+">
+
+  <div style="color:#ffdd55;font-weight:bold;margin-bottom:8px;font-size:14px;">
+    Bagikan Portal Ini
+  </div>
+
+  <a id="shareWA" href="#" target="_blank"
+     style="display:block;margin:5px 0;padding:8px 14px;background:#25D366;color:white;border-radius:20px;text-decoration:none;font-size:13px;">
+     WhatsApp
+  </a>
+
+  <a id="shareFB" href="#" target="_blank"
+     style="display:block;margin:5px 0;padding:8px 14px;background:#1877F2;color:white;border-radius:20px;text-decoration:none;font-size:13px;">
+     Facebook
+  </a>
+
+  <a id="shareTG" href="#" target="_blank"
+     style="display:block;margin:5px 0;padding:8px 14px;background:#0088cc;color:white;border-radius:20px;text-decoration:none;font-size:13px;">
+     Telegram
+  </a>
+
+  <button onclick="document.getElementById('multiShareBox').style.display='none'"
+     style="margin-top:6px;width:100%;background:none;border:1px solid #ffdd55;color:#ffdd55;padding:5px;border-radius:16px;font-size:12px;">
+     Tutup
+  </button>
+</div>
+
+<script>
+(function(){
+  var link = encodeURIComponent("https://slee17an-spec.github.io/bisikan-sufi/");
+  var text = encodeURIComponent("Lihat Portal Bisikan Sufi yang sedang viral:");
+
+  document.getElementById("shareWA").href =
+    "https://wa.me/?text=" + text + "%20" + link;
+
+  document.getElementById("shareFB").href =
+    "https://www.facebook.com/sharer/sharer.php?u=" + link;
+
+  document.getElementById("shareTG").href =
+    "https://t.me/share/url?url=" + link + "&text=" + text;
+
+  // Tampilkan otomatis setelah 10 detik
+  setTimeout(function(){
+    document.getElementById("multiShareBox").style.display = "block";
+  }, 10000);
+})();
+</script>
+<!-- COMBO POPUP VIRAL (SCROLL + TIMER) -->
+<div id="comboPopup" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  z-index:99999;
+  justify-content:center;
+  align-items:center;
+">
+  <div style="
+    background:#0d0d0d;
+    border:2px solid #ffdd55;
+    padding:20px;
+    border-radius:16px;
+    text-align:center;
+    max-width:300px;
+    box-shadow:0 0 30px rgba(255,215,0,0.6);
+  ">
+    <h3 style="color:#ffdd55;margin:0 0 10px;">Bagikan Portal Ini</h3>
+    <p style="color:#ccc;font-size:13px;margin-bottom:15px;">
+      Jika kamu merasa terinspirasi, bagikan ke temanmu.
+    </p>
+
+    <a href="https://wa.me/?text=https://slee17an-spec.github.io/bisikan-sufi/" target="_blank"
+       style="display:block;margin:6px 0;padding:10px;background:#25D366;color:white;border-radius:20px;text-decoration:none;">
+       Share ke WhatsApp
+    </a>
+
+    <button onclick="document.getElementById('comboPopup').style.display='none'"
+      style="margin-top:10px;background:none;border:1px solid #ffdd55;color:#ffdd55;padding:6px 14px;border-radius:20px;font-size:13px;">
+      Tutup
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var shown = false;
+
+  function showPopup(){
+    if(shown) return;
+    shown = true;
+    document.getElementById("comboPopup").style.display = "flex";
+  }
+
+  // Trigger by time (15 detik)
+  setTimeout(showPopup, 15000);
+
+  // Trigger by scroll (70%)
+  window.addEventListener("scroll", function(){
+    var scrollPos = window.scrollY + window.innerHeight;
+    var docHeight = document.body.offsetHeight;
+    if((scrollPos / docHeight) > 0.7){
+      showPopup();
+    }
+  });
+})();
+</script>
+<!-- SHARE CLICK COUNTER DISPLAY -->
+<div id="shareStatsBox" style="
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#0d0d0d;
+  border:2px solid #ffdd55;
+  padding:10px 14px;
+  border-radius:16px;
+  color:#ffdd55;
+  font-size:13px;
+  font-weight:bold;
+  z-index:9999;
+  box-shadow:0 0 18px rgba(255,215,0,0.4);
+">
+  Total Share: <span id="shareCount">0</span>
+</div>
+
+<script>
+(function(){
+  // Ambil jumlah klik share
+  var count = localStorage.getItem("bs_share_count") || 0;
+  count = parseInt(count);
+
+  // Tampilkan angka di UI
+  document.getElementById("shareCount").innerText = count;
+
+  // Tangkap semua link share
+  var wa = document.getElementById("shareWA");
+  var fb = document.getElementById("s
+<!-- GLOBAL VIEW COUNTER -->
+<div id="globalStatsBox" style="
+  position:fixed;
+  bottom:60px;
+  left:20px;
+  background:#000;
+  border:2px solid #ffdd55;
+  padding:10px 14px;
+  border-radius:16px;
+  color:#ffdd55;
+  font-size:13px;
+  font-weight:bold;
+  z-index:9999;
+">
+  Total Pengunjung: <span id="globalCount">...</span>
+</div>
+
+<script>
+fetch("https://api.countapi.xyz/hit/bisikan-sufi/portal")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("globalCount").innerText = data.value;
+  });
+</script>
+<!-- YOUTUBE CLICK COUNTER -->
+<div id="ytStatsBox" style="
+  position:fixed;
+  bottom:100px;
+  left:20px;
+  background:#000;
+  border:2px solid #ff5555;
+  padding:10px 14px;
+  border-radius:16px;
+  color:#ff5555;
+  font-size:13px;
+  font-weight:bold;
+  z-index:9999;
+">
+  Klik ke YouTube: <span id="ytClickCount">0</span>
+</div>
+
+<script>
+let ytClicks = localStorage.getItem("yt_clicks") || 0;
+ytClicks = parseInt(ytClicks);
+document.getElementById("ytClickCount").innerText = ytClicks;
+
+// Tangkap klik ke video YouTube
+document.addEventListener("click", function(e){
+  const a = e.target.closest("a");
+  if(a && a.href.includes("youtube.com/shorts")){
+    ytClicks++;
+    localStorage.setItem("yt_clicks", ytClicks);
+    document.getElementById("ytClickCount").innerText = ytClicks;
+  }
+});
+</script>
+<!-- DASHBOARD STATS UI -->
+<div style="
+  position:fixed; 
+  bottom:140px; 
+  left:20px; 
+  background:#0d0d0d; 
+  border:2px solid #ffdd55; 
+  border-radius:16px; 
+  padding:10px; 
+  color:#ffdd55; 
+  z-index:9999;">
+  <div style="font-weight:bold;margin-bottom:6px;">Dashboard</div>
+  <canvas id="statsChart" width="220" height="120"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+(function(){
+  let views = parseInt(localStorage.getItem("bs_views")||"0");
+  let shares = parseInt(localStorage.getItem("bs_share_count")||"0");
+  let yt = parseInt(localStorage.getItem("yt_clicks")||"0");
+
+  const ctx = document.getElementById('statsChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Views','Shares','YT Clicks'],
+      datasets: [{
+        label: 'Stats',
+        data: [views, shares, yt],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive:false,
+      plugins:{legend:{display:false}}
+    }
+  });
+})();
+</script>
+<!-- HEATMAP CLICK TRACKER -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    const dot = document.createElement('div');
+    dot.style.position = 'fixed';
+    dot.style.left = (e.clientX - 6)+'px';
+    dot.style.top = (e.clientY - 6)+'px';
+    dot.style.width = '12px';
+    dot.style.height = '12px';
+    dot.style.borderRadius = '50%';
+    dot.style.background = 'rgba(255,0,0,0.4)';
+    dot.style.pointerEvents = 'none';
+    dot.style.zIndex = '99999';
+    document.body.appendChild(dot);
+
+    setTimeout(()=>dot.remove(), 1500);
+  });
+})();
+</script>
 
 </body>
 </html>
