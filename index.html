@@ -3,12 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bisikan <!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bisikan Sufi – Supreme Aether Portal (50 Videos)</title>
+<title>Portal Bisikan Sufi – 50 Video</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
     body {
@@ -20,25 +18,8 @@
         overflow-x: hidden;
         text-align: center;
     }
-        /* Video Preview Hover */
-.video-card video {
-    width: 100%;
-    border-radius: 12px;
-    display: none; /* sembunyi default */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
-}
 
-.video-card:hover img.thumb {
-    opacity: 0; /* sembunyikan thumbnail saat hover */
-}
-
-.video-card:hover video {
-    display: block; /* tampilkan video saat hover */
-}
-
+    /* TITLE ANIMASI */
     h1 {
         margin-top: 40px;
         font-size: 42px;
@@ -79,18 +60,18 @@
 
     /* GRID VIDEO */
     .menu-wrapper {
-        margin-top: 40px;
+        margin-top: 50px;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
         gap: 25px;
         padding: 20px;
-        width: 94%;
-        max-width: 1300px;
+        width: 92%;
+        max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    /* KARTU VIDEO */
+    /* VIDEO CARD */
     .video-card {
         position: relative;
         background: #0e0e0e;
@@ -110,8 +91,6 @@
         box-shadow: 0 0 35px rgba(255,215,0,0.9);
         border-color: #ffdd55;
     }
-
-    /* SHINE EFFECT */
     .video-card::after {
         content: "";
         position: absolute;
@@ -132,15 +111,53 @@
         margin-bottom: 12px;
         box-shadow: 0 0 20px rgba(255,215,0,0.5);
         transition: 0.3s;
+        display: block;
     }
-    .video-card:hover .thumb {
-        box-shadow: 0 0 35px rgba(255,215,0,1);
+
+    /* VIDEO PREVIEW */
+    .video-card iframe {
+        width: 100%;
+        border-radius: 12px;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
     }
+    .video-card:hover img.thumb {
+        opacity: 0;
+    }
+    .video-card:hover iframe {
+        display: block;
+    }
+
+    /* FLOATING SUBSCRIBE BUTTON */
+    .subscribe-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 28px;
+        background: linear-gradient(45deg, #ff0000, #ff5555);
+        color: white;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 50px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        z-index: 9999;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .subscribe-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    }
+
 </style>
 </head>
 <body>
 
-<h1>Portal 50 Bisikan Sufi</h1>
+<h1>Portal Bisikan Sufi</h1>
 
 <!-- Partikel Emas -->
 <div class="particles" id="particles"></div>
@@ -161,15 +178,7 @@
 <div class="menu-wrapper" id="videoMenu"></div>
 
 <script>
-    /* ======================================================
-       DAFTAR VIDEO (ISI 50 VIDEO DI SINI)
-       FORMAT:
-       ["YOUTUBE_ID", "Judul Video"]
-       ====================================================== */
     const videoList = [
-        ["BqvsdnBKv7g", "15 Bisikan Para Sufi"],
-        ["emubGiOZ1uI", "Pesan Sunyi Dari Rasa Sakit"],
-        ["-zdoN0tuoEE", "17 Pesan Bisikan Sufi"],
         ["wE4GKYX0joA", "Perjalanan Bathin Tentang Ikhlas"],
         ["moRQpTWCVOs", "Pesan Cinta Semesta"],
         ["UeawpfOSZ3A", "Do'a Berjalan Dalam Dirimu"],
@@ -188,245 +197,37 @@
         ["DdrN_TjwbV4", "Langkah Tak Pernah Berhenti"],
         ["dVskdjM4N0I", "Air Tenang Mengajar Aku"],
         ["ZO2wlUGQOlo", "Bisikan Yang Tak Didengar"],
+        ["BqvsdnBKv7g", "15 Bisikan Para Sufi"],
         ["k-7Ou4_jyAE", "Pesan Sunyi Untuk Jiwamu"],
-        ["d43NWoLDTqY", "Bisikan Dari Dalam"],
+        ["-zdoN0tuoEE", "17 Pesan Bisikan Sufi"],
+        ["d43NWoLDTqY", "Bisikan Dari Dalam"]
+        // Tambahkan sampai 50 video
     ];
 
-    /* ======================================================
-       GENERATOR KARTU OTOMATIS
-       ====================================================== */
     const container = document.getElementById("videoMenu");
 
     videoList.forEach(v => {
-    const id = v[0];
-    const title = v[1];
-    const url = "https://youtube.com/shorts/" + id;
-    const thumb = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
-    const preview = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${id}`;
-
-    const card = `
-        <a class="video-card" href="${url}" target="_blank">
-            <img class="thumb" src="${thumb}">
-            <iframe src="${preview}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:none;"></iframe>
-            ${title}
-        </a>
-    `;
-    container.innerHTML += card;
-});
-
-// Tambahkan event hover agar iframe play saat hover
-document.querySelectorAll('.video-card').forEach(card => {
-    const iframe = card.querySelector('iframe');
-    const thumb = card.querySelector('img.thumb');
-
-    card.addEventListener('mouseenter', () => {
-        thumb.style.opacity = '0';
-        iframe.style.display = 'block';
-    });
-
-    card.addEventListener('mouseleave', () => {
-        thumb.style.opacity = '1';
-        iframe.style.display = 'none';
-    });
-});
-
+        const id = v[0];
+        const title = v[1];
+        const url = "https://youtube.com/shorts/" + id;
+        const thumb = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+        const preview = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${id}`;
 
         const card = `
-            <a class="video-card" href="${url}">
+            <a class="video-card" href="${url}" target="_blank">
                 <img class="thumb" src="${thumb}">
+                <iframe src="${preview}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 ${title}
             </a>
         `;
         container.innerHTML += card;
     });
-</script>
-<!-- FLOATING SUBSCRIBE BUTTON -->
-<a href="https://www.youtube.com/channel/bisikan-sufi?sub_confirmation=1" 
-   target="_blank"
-   style="
-       position: fixed;
-       bottom: 20px;
-       right: 20px;
-       padding: 14px 28px;
-       background: linear-gradient(45deg, #ff0000, #ff5555);
-       color: white;
-       font-weight: bold;
-       font-family: 'Poppins', sans-serif;
-       font-size: 16px;
-       text-decoration: none;
-       border-radius: 50px;
-       box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-       z-index: 9999;
-       transition: transform 0.2s, box-shadow 0.2s;
-   "
-   onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.6)';"
-   onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.4)';"
->
-   Subscribe
-</a>
 
-</body>
-</html>
-Sufi – Premium Portal</title>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: radial-gradient(circle at center, #0c0c0c, #000);
-        color: #fff;
-        font-family: "Poppins", sans-serif;
-        overflow-x: hidden;
-        text-align: center;
-    }
-
-    /* TITLE ANIMASI PREMIUM */
-    h1 {
-        margin-top: 40px;
-        font-size: 42px;
-        font-weight: 800;
-        text-transform: uppercase;
-        background: linear-gradient(90deg, #ffdd55, #ffffff, #ffdd55);
-        -webkit-background-clip: text;
-        color: transparent;
-        letter-spacing: 4px;
-        animation: titleGlow 3s infinite ease-in-out;
-    }
-
-    @keyframes titleGlow {
-        0% { text-shadow: 0 0 12px rgba(255,221,85,0.4); }
-        50% { text-shadow: 0 0 30px rgba(255,221,85,0.9); }
-        100% { text-shadow: 0 0 12px rgba(255,221,85,0.4); }
-    }
-
-    /* BACKGROUND PARTIKEL EMAS */
-    .particles {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        z-index: -1;
-        overflow: hidden;
-    }
-
-    .particle {
-        position: absolute;
-        width: 6px; height: 6px;
-        background: radial-gradient(circle, #ffe27a, #b58b00);
-        border-radius: 50%;
-        animation: floatUp linear infinite;
-        opacity: 0.8;
-    }
-
-    @keyframes floatUp {
-        from { transform: translateY(100vh) scale(0.5); }
-        to { transform: translateY(-10vh) scale(1.1); }
-    }
-
-    /* GRID MENU */
-    .menu-wrapper {
-        margin-top: 50px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 25px;
-        padding: 20px;
-        width: 92%;
-        max-width: 1100px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* CARD VIDEO */
-    .video-card {
-        position: relative;
-        background: #0e0e0e;
-        padding: 18px;
-        border-radius: 16px;
-        text-decoration: none;
-        color: #ffe877;
-        font-size: 20px;
-        font-weight: 600;
-        box-shadow: 0 0 18px rgba(255,215,0,0.35);
-        border: 2px solid rgba(255,215,0,0.3);
-        transition: 0.35s;
-        overflow: hidden;
-    }
-
-    /* ANIMASI HOVER PREMIUM */
-    .video-card:hover {
-        transform: translateY(-10px) scale(1.05);
-        box-shadow: 0 0 35px rgba(255,215,0,0.9);
-        border-color: #ffdd55;
-    }
-
-    /* SHINE EFFECT */
-    .video-card::after {
-        content: "";
-        position: absolute;
-        top: 0; left: -120%;
-        width: 80%; height: 100%;
-        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-        animation: shine 4s infinite;
-    }
-
-    @keyframes shine {
-        0% { left: -120%; }
-        100% { left: 150%; }
-    }
-
-    /* THUMBNAIL */
-    .thumb {
-        width: 100%;
-        border-radius: 12px;
-        margin-bottom: 12px;
-        box-shadow: 0 0 20px rgba(255,215,0,0.5);
-        transition: 0.3s;
-    }
-
-    .video-card:hover .thumb {
-        box-shadow: 0 0 35px rgba(255,215,0,1);
-    }
-
-</style>
-</head>
-<body>
-
-<h1>Portal Premium Bisikan Sufi</h1>
-
-<!-- GOLD PARTICLE BACKGROUND -->
-<div class="particles" id="particles"></div>
-
-<script>
-    /* Generate Partikel Emas */
-    const part = document.getElementById("particles");
-    for (let i = 0; i < 60; i++) {
-        const p = document.createElement("div");
-        p.classList.add("particle");
-        p.style.left = Math.random() * 100 + "vw";
-        p.style.animationDuration = (4 + Math.random() * 6) + "s";
-        p.style.animationDelay = (Math.random() * 5) + "s";
-        part.appendChild(p);
-    }
 </script>
 
-<!-- MENU VIDEO -->
-<div class="menu-wrapper">
-
-    <a class="video-card" href="video1.html">
-        <img class="thumb" src="https://img.youtube.com/vi/BqvsdnBKv7g/maxresdefault.jpg">
-        15 Bisikan Sufi yang Bisa Mengubah Harimu
-    </a>
-
-    <a class="video-card" href="video2.html">
-        <img class="thumb" src="https://img.youtube.com/vi/UeawpfOSZ3A/maxresdefault.jpg">
-        Doa Berjalan Dalam Dirimu
-    </a>
-
-    <a class="video-card" href="video3.html">
-        <img class="thumb" src="https://img.youtube.com/vi/-zdoN0tuoEE/maxresdefault.jpg">
-        17 Bisikan Yang Bisa Mengubah Cara Pandangmu
-    </a>
-
-</div>
+<!-- Floating Subscribe Button -->
+<a href="https://www.youtube.com/channel/CHANNEL_ID?sub_confirmation=1" 
+   target="_blank" class="subscribe-btn">Subscribe</a>
 
 </body>
 </html>
