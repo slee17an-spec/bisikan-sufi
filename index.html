@@ -10,6 +10,20 @@
 
   gtag('config', 'G-54EFTVE5HQ');
 </script>
+  <script>
+document.addEventListener("click", function(e){
+  var link = e.target.closest("a");
+  if(link && link.href.includes("youtube.com/shorts")){
+    if(typeof gtag === 'function'){
+      gtag('event', 'click_short', {
+        'event_category':'video',
+        'event_label': link.href
+      });
+    }
+  }
+});
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portal Bisikan Sufi – 50 Video Inspiratif Short Viral</title>
