@@ -5,257 +5,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portal Bisikan Sufi – 50 Video Inspiratif Short Viral</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-<!-- SEO Meta Tags -->
-<meta name="description" content="Portal 50 Bisikan Sufi – video pendek YouTube (shorts) inspiratif, meditasi, ketenangan, dan spiritual. Nikmati bisikan sufi untuk meningkatkan kesadaran, ketenangan hati, dan motivasi batin. Short viral dan konten trending meditasi dan spiritual.">
-<meta name="keywords" content="
-bisikan sufi, meditasi singkat, video spiritual, short video, short viral, youtube shorts, video pendek inspiratif, motivasi batin, ketenangan hati, meditasi harian, video mindfulness, self healing, spiritual awakening, viral shorts, konten trending, youtube short viral, inspirasi sufi, pesan batin, pengembangan diri, konten meditasi, video doa, ketenangan jiwa, energi positif, introspeksi, video healing, spiritual guidance, short motivasi, viral spiritual, short meditasi, short inspiratif, konten positif, youtube shorts indonesia
-">
+<!-- SEO Meta -->
+<meta name="description" content="Portal 50 Bisikan Sufi – video pendek YouTube (shorts) inspiratif, meditasi, ketenangan, dan spiritual.">
+<meta name="keywords" content="bisikan sufi, short viral, youtube shorts, meditasi, spiritual indonesia, self healing, motivasi batin, konten viral">
 <meta name="author" content="Bisikan Sufi Portal">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Portal Bisikan Sufi – 50 Video Inspiratif">
-<meta property="og:description" content="Nikmati video pendek YouTube (shorts) tentang bisikan sufi, meditasi, ketenangan hati, dan spiritual. Short viral dan konten trending meditasi & inspirasi batin.">
-<meta property="og:image" content="https://img.youtube.com/vi/wE4GKYX0joA/maxresdefault.jpg">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://slee17an-spec.github.io/bisikan-sufi/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Portal Bisikan Sufi – 50 Video Inspiratif">
-<meta name="twitter:description" content="Portal video pendek YouTube (shorts) inspiratif, meditasi, ketenangan hati, dan spiritual. Short viral & konten trending meditasi & inspirasi batin.">
-<meta name="twitter:image" content="https://img.youtube.com/vi/wE4GKYX0joA/maxresdefault.jpg">
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: radial-gradient(circle at center, #0c0c0c, #000);
-        color: #fff;
-        font-family: "Poppins", sans-serif;
-        overflow-x: hidden;
-        text-align: center;
-    }
+body{margin:0;padding:0;background:radial-gradient(circle,#0c0c0c,#000);color:#fff;font-family:Poppins;text-align:center}
+h1{margin-top:40px;font-size:42px;font-weight:800;text-transform:uppercase;background:linear-gradient(90deg,#ffdd55,#ffffff,#ffdd55);-webkit-background-clip:text;color:transparent}
+.particles{position:fixed;inset:0;z-index:-1}
+.particle{position:absolute;width:6px;height:6px;background:radial-gradient(circle,#ffe27a,#b58b00);border-radius:50%;animation:floatUp linear infinite}
+@keyframes floatUp{from{transform:translateY(100vh)}to{transform:translateY(-10vh)}}
 
-    /* TITLE ANIMASI */
-    h1 {
-        margin-top: 40px;
-        font-size: 42px;
-        font-weight: 800;
-        text-transform: uppercase;
-        background: linear-gradient(90deg, #ffdd55, #ffffff, #ffdd55);
-        -webkit-background-clip: text;
-        color: transparent;
-        letter-spacing: 4px;
-        animation: titleGlow 3s infinite ease-in-out;
-    }
-    @keyframes titleGlow {
-        0% { text-shadow: 0 0 12px rgba(255,221,85,0.4); }
-        50% { text-shadow: 0 0 30px rgba(255,221,85,0.9); }
-        100% { text-shadow: 0 0 12px rgba(255,221,85,0.4); }
-    }
+.menu-wrapper{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:25px;padding:20px;max-width:1200px;margin:auto}
+.video-card{position:relative;background:#0e0e0e;padding:18px;border-radius:16px;color:#ffe877;text-decoration:none;font-weight:600;box-shadow:0 0 20px rgba(255,215,0,.4);overflow:hidden}
+.video-card:hover{transform:scale(1.05)}
 
-    /* BACKGROUND PARTIKEL EMAS */
-    .particles {
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        overflow: hidden;
-    }
-    .particle {
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        background: radial-gradient(circle, #ffe27a, #b58b00);
-        border-radius: 50%;
-        animation: floatUp linear infinite;
-        opacity: 0.8;
-    }
-    @keyframes floatUp {
-        from { transform: translateY(100vh) scale(0.5); }
-        to { transform: translateY(-10vh) scale(1.1); }
-    }
+.thumb{width:100%;border-radius:12px;margin-bottom:12px}
+.video-card iframe{width:100%;border-radius:12px;display:none;position:absolute;top:0;left:0;z-index:5}
+.video-card:hover img{opacity:0}
+.video-card:hover iframe{display:block}
 
-    /* GRID VIDEO */
-    .menu-wrapper {
-        margin-top: 50px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 25px;
-        padding: 20px;
-        width: 92%;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* VIDEO CARD */
-    .video-card {
-        position: relative;
-        background: #0e0e0e;
-        padding: 18px;
-        border-radius: 16px;
-        text-decoration: none;
-        color: #ffe877;
-        font-size: 18px;
-        font-weight: 600;
-        box-shadow: 0 0 18px rgba(255,215,0,0.35);
-        border: 2px solid rgba(255,215,0,0.3);
-        transition: 0.35s;
-        overflow: hidden;
-    }
-    .video-card:hover {
-        transform: translateY(-10px) scale(1.05);
-        box-shadow: 0 0 35px rgba(255,215,0,0.9);
-        border-color: #ffdd55;
-    }
-    .video-card::after {
-        content: "";
-        position: absolute;
-        top: 0; left: -120%;
-        width: 80%; height: 100%;
-        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-        animation: shine 4s infinite;
-    }
-    @keyframes shine {
-        0% { left: -120%; }
-        100% { left: 150%; }
-    }
-
-    /* THUMBNAIL */
-    .thumb {
-        width: 100%;
-        border-radius: 12px;
-        margin-bottom: 12px;
-        box-shadow: 0 0 20px rgba(255,215,0,0.5);
-        transition: 0.3s;
-        display: block;
-    }
-
-    /* VIDEO PREVIEW */
-    .video-card iframe {
-        width: 100%;
-        border-radius: 12px;
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-    }
-    .video-card:hover img.thumb {
-        opacity: 0;
-    }
-    .video-card:hover iframe {
-        display: block;
-    }
-
-    /* FLOATING SUBSCRIBE BUTTON */
-    .subscribe-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 14px 28px;
-        background: linear-gradient(45deg, #ff0000, #ff5555);
-        color: white;
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
-        font-size: 16px;
-        text-decoration: none;
-        border-radius: 50px;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-        z-index: 9999;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .subscribe-btn:hover {
-        transform: scale(1.1);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.6);
-    }
-
+.subscribe-btn{position:fixed;bottom:20px;right:20px;padding:14px 28px;background:linear-gradient(45deg,#ff0000,#ff5555);color:#fff;border-radius:50px;font-weight:bold;text-decoration:none;z-index:9999}
 </style>
 </head>
+
 <body>
 
 <h1>Portal Bisikan Sufi</h1>
-
-<!-- Partikel Emas -->
 <div class="particles" id="particles"></div>
+
 <script>
-const part = document.getElementById("particles");
-for (let i = 0; i < 70; i++) {
-    const p = document.createElement("div");
-    p.classList.add("particle");
-    p.style.left = Math.random() * 100 + "vw";
-    p.style.animationDuration = (4 + Math.random() * 6) + "s";
-    p.style.animationDelay = (Math.random() * 5) + "s";
-    part.appendChild(p);
+const part=document.getElementById("particles");
+for(let i=0;i<60;i++){
+ let p=document.createElement("div");
+ p.classList.add("particle");
+ p.style.left=Math.random()*100+"vw";
+ p.style.animationDuration=(3+Math.random()*6)+"s";
+ part.appendChild(p);
 }
 </script>
 
-<!-- GRID VIDEO -->
 <div class="menu-wrapper" id="videoMenu"></div>
 
 <script>
 const videoList = [
-    ["wE4GKYX0joA", "Perjalanan Bathin Tentang Ikhlas"],
-    ["moRQpTWCVOs", "Pesan Cinta Semesta"],
-    ["UeawpfOSZ3A", "Do'a Berjalan Dalam Dirimu"],
-    ["FxYdvjB7Rik", "Do'a Dari Jiwa Yang Patah"],
-    ["UBLvYS0eQTg", "Sunyi Yang Mengajarkan"],
-    ["A2D4m_3Wn48", "Ketika Hati Berbicara Lewat Keheningan"],
-    ["6mYCJ4L36rc", "Dimana Rindu Menemukan Jalan"],
-    ["Ag2IW5Mxhvg", "Tangisan Yang Tidak Terdengar"],
-    ["PemL1GtG6ME", "Jejak Yang Tidak Lagi Mencari"],
-    ["BQnNbGmxzus", "Hutan Yang Mengajari Hidup"],
-    ["iR6ruqrC6AA", "Ketika Air Mengingat Namamu"],
-    ["ecA02MMdHuk", "Bangkit Lagi"],
-    ["TpKnIiQC4Bc", "Langkah Kecil"],
-    ["OuYlYAlMQ1s", "Bisikan Tengah Hari"],
-    ["pixcVnNtBpI", "Api Yang Mengingatkan"],
-    ["DdrN_TjwbV4", "Langkah Tak Pernah Berhenti"],
-    ["dVskdjM4N0I", "Air Tenang Mengajar Aku"],
-    ["ZO2wlUGQOlo", "Bisikan Yang Tak Didengar"],
-    ["BqvsdnBKv7g", "15 Bisikan Para Sufi"],
-    ["k-7Ou4_jyAE", "Pesan Sunyi Untuk Jiwamu"],
-    ["-zdoN0tuoEE", "17 Pesan Bisikan Sufi"],
-    ["d43NWoLDTqY", "Bisikan Dari Dalam"]
+ ["wE4GKYX0joA","Perjalanan Bathin Tentang Ikhlas"],
+ ["moRQpTWCVOs","Pesan Cinta Semesta"],
+ ["UeawpfOSZ3A","Doa Berjalan Dalam Dirimu"],
+ ["FxYdvjB7Rik","Doa Dari Jiwa Yang Patah"]
 ];
 
-const container = document.getElementById("videoMenu");
+const container=document.getElementById("videoMenu");
 
-videoList.forEach(v => {
-    const id = v[0];
-    const title = v[1];
-    const url = "https://youtube.com/shorts/" + id;
-    const thumb = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
-    const preview = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${id}`;
+videoList.forEach(v=>{
+ const id=v[0];
+ const title=v[1];
+ const url="https://youtube.com/shorts/"+id;
+ const thumb=`https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+ const preview=`https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${id}`;
 
-    const card = `
-        <a class="video-card" href="${url}" target="_blank">
-            <img class="thumb" src="${thumb}">
-            <iframe src="${preview}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            ${title}
-        </a>
-    `;
-    container.innerHTML += card;
+ const card=`
+  <a class="video-card" href="${url}" target="_blank">
+   <img class="thumb" src="${thumb}" 
+   alt="Bisikan Sufi Short Viral Indonesia – ${title} – YouTube Shorts Trending – Meditasi Spiritual – Self Healing – Konten Viral Terbaru"
+   title="Bisikan Sufi – ${title} – Short Viral Spiritual">
+   <iframe src="${preview}" allow="autoplay; encrypted-media"></iframe>
+   ${title}
+  </a>`;
+ container.innerHTML+=card;
 });
 </script>
 
-<!-- Floating Subscribe Button -->
-<a href="https://www.youtube.com/channel/bisikan-sufi?sub_confirmation=1" 
-   target="_blank" class="subscribe-btn">Subscribe</a>
+<a href="https://www.youtube.com/channel/CHANNEL_ID?sub_confirmation=1" class="subscribe-btn">Subscribe</a>
 
-<!-- Footer Lisensi -->
-<footer style="
-    margin-top: 40px;
-    padding: 20px 10px;
-    font-size: 14px;
-    color: #ccc;
-    text-align: center;
-    border-top: 1px solid rgba(255,215,0,0.2);
-">
-    &copy; 2025 Bisikan Sufi Portal. Semua hak cipta dilindungi.<br>
-    Konten video milik pemilik masing-masing di YouTube.<br>
-    Lisensi: <strong>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</strong>.<br>
-    Tidak diperbolehkan menjual ulang atau memodifikasi konten tanpa izin.
+<footer style="margin-top:40px;padding:20px;color:#aaa;font-size:14px">
+© 2025 Bisikan Sufi Portal. Semua Hak Dilindungi.<br>
+Lisensi: CC BY-NC-ND 4.0
 </footer>
 
 </body>
