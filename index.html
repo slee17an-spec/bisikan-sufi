@@ -12,6 +12,39 @@
 <meta name="keywords" content="bisikan sufi, short viral, youtube shorts, meditasi, spiritual indonesia, self healing, motivasi batin, konten viral">
 <meta name="author" content="Bisikan Sufi Portal">
 <meta name="robots" content="index, follow">
+<!-- Google SEO Advanced -->
+<meta name="google-site-verification" content="tempel_kode_nanti_dari_search_console">
+<meta name="distribution" content="global">
+<meta name="rating" content="general">
+<meta name="language" content="id">
+
+<!-- Open Graph for WhatsApp / Facebook -->
+<meta property="og:title" content="Portal Bisikan Sufi – Video Short Viral & Spiritual">
+<meta property="og:description" content="Tonton kumpulan video pendek YouTube Shorts viral bertema Bisikan Sufi, meditasi, ketenangan dan spiritual. Portal viral & inspiratif.">
+<meta property="og:image" content="https://img.youtube.com/vi/wE4GKYX0joA/maxresdefault.jpg">
+<meta property="og:url" content="https://slee17an-spec.github.io/bisikan-sufi/">
+<meta property="og:site_name" content="Bisikan Sufi Portal">
+
+<!-- Twitter/X Sharing -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portal Bisikan Sufi – Short Viral & Spiritual">
+<meta name="twitter:description" content="Portal video pendek YouTube Shorts Spiritual & Viral Indonesia">
+<meta name="twitter:image" content="https://img.youtube.com/vi/wE4GKYX0joA/maxresdefault.jpg">
+
+<!-- Schema Markup for Google Rich Results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGallery",
+  "name": "Portal Bisikan Sufi",
+  "description": "Portal video pendek YouTube Shorts viral bertema meditasi, spiritual, dan ketenangan batin.",
+  "url": "https://slee17an-spec.github.io/bisikan-sufi/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bisikan Sufi"
+  }
+}
+</script>
 
 <style>
 body{margin:0;padding:0;background:radial-gradient(circle,#0c0c0c,#000);color:#fff;font-family:Poppins;text-align:center}
@@ -68,19 +101,46 @@ videoList.forEach(v=>{
  const thumb=`https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
  const preview=`https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${id}`;
 
- const card=`
+const card = `
   <a class="video-card" href="${url}" target="_blank">
-   <img class="thumb" src="${thumb}" 
-   alt="Bisikan Sufi Short Viral Indonesia – ${title} – YouTube Shorts Trending – Meditasi Spiritual – Self Healing – Konten Viral Terbaru"
-   title="Bisikan Sufi – ${title} – Short Viral Spiritual">
-   <iframe src="${preview}" allow="autoplay; encrypted-media"></iframe>
-   ${title}
-  </a>`;
+    <img class="thumb" src="${thumb}" 
+      alt="Bisikan Sufi YouTube Shorts Viral Indonesia – ${title} – Video Meditasi – Self Healing – Konten Trending"
+      title="YouTube Shorts Viral – ${title} | Bisikan Sufi Spiritual">
+
+    <iframe src="${preview}" allow="autoplay; encrypted-media"></iframe>
+
+    <span style="display:none">
+      #shorts #youtubeshorts #viral #bisikansufi #meditasi #spiritual #healing
+    </span>
+
+    ${title}
+  </a>
+`;
+
  container.innerHTML+=card;
 });
 </script>
 
 <a href="https://www.youtube.com/channel/CHANNEL_ID?sub_confirmation=1" class="subscribe-btn">Subscribe</a>
+<!-- Viral Share Buttons -->
+<div style="margin:40px 0;text-align:center">
+  <p style="color:#ffdd55;font-weight:bold">Bagikan Portal Ini</p>
+
+  <a href="https://wa.me/?text=https://slee17an-spec.github.io/bisikan-sufi/" target="_blank"
+     style="margin:5px;padding:10px 20px;background:#25D366;color:white;border-radius:30px;text-decoration:none;">
+     WhatsApp
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://slee17an-spec.github.io/bisikan-sufi/" target="_blank"
+     style="margin:5px;padding:10px 20px;background:#1877F2;color:white;border-radius:30px;text-decoration:none;">
+     Facebook
+  </a>
+
+  <a href="https://t.me/share/url?url=https://slee17an-spec.github.io/bisikan-sufi/" target="_blank"
+     style="margin:5px;padding:10px 20px;background:#0088cc;color:white;border-radius:30px;text-decoration:none;">
+     Telegram
+  </a>
+</div>
 
 <footer style="margin-top:40px;padding:20px;color:#aaa;font-size:14px">
 © 2025 Bisikan Sufi Portal. Semua Hak Dilindungi.<br>
