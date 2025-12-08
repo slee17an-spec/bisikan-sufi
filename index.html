@@ -191,28 +191,6 @@ const card = `
 © 2025 Bisikan Sufi Portal. Semua Hak Dilindungi.<br>
 Lisensi: CC BY-NC-ND 4.0
 </footer>
-<!-- VIRAL LOOP ENGINE -->
-<script>
-(function(){
-  var visits = localStorage.getItem("bs_visit") || 0;
-  visits = parseInt(visits) + 1;
-  localStorage.setItem("bs_visit", visits);
-
-  setTimeout(function(){
-    if(visits >= 2 && !sessionStorage.getItem("bs_popup_shown")){
-      var modal = document.getElementById("viralModal");
-      if(modal) { modal.style.display = "flex"; }
-      sessionStorage.setItem("bs_popup_shown","yes");
-    }
-  }, 5000);
-
-  if(document.referrer.indexOf("youtube.com") !== -1){
-    window.scrollTo({top:200, behavior:"smooth"});
-  }
-})();
-</script>
-
-
 
   <script>
 (function(){
